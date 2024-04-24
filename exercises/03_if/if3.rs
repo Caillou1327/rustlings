@@ -2,17 +2,17 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2 // Changement de 2.0 vers 2 pour être de même type que le reste de la fonction
     } else if animal == "snake" {
         3
     } else {
-        "Unknown"
+        0 // Changement de Unknown vers 0 pour être de même type que le reste de la fonction
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW
