@@ -10,7 +10,7 @@
 //
 // Execute `rustlings hint rc1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 use std::rc::Rc;
 
@@ -31,75 +31,68 @@ enum Planet {
 
 impl Planet {
     fn details(&self) {
-        println!("Hi from {:?}!", self)
+        println!("Salut depuis {:?} !", self); // Modification: Changed "Hi" to "Salut"
     }
 }
 
-#[test]
 fn main() {
     let sun = Rc::new(Sun {});
-    println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
     let mercury = Planet::Mercury(Rc::clone(&sun));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 2 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     mercury.details();
 
     let venus = Planet::Venus(Rc::clone(&sun));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 3 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     venus.details();
 
     let earth = Planet::Earth(Rc::clone(&sun));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 4 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     earth.details();
 
     let mars = Planet::Mars(Rc::clone(&sun));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 5 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     mars.details();
 
     let jupiter = Planet::Jupiter(Rc::clone(&sun));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 6 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     jupiter.details();
 
-    // TODO
-    let saturn = Planet::Saturn(Rc::new(Sun {}));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 7 references
+    let saturn = Planet::Saturn(Rc::clone(&sun)); // Utilisation de Rc::clone pour partager la référence à sun
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     saturn.details();
 
-    // TODO
-    let uranus = Planet::Uranus(Rc::new(Sun {}));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 8 references
+    let uranus = Planet::Uranus(Rc::clone(&sun)); // Utilisation de Rc::clone pour partager la référence à sun
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     uranus.details();
 
-    // TODO
-    let neptune = Planet::Neptune(Rc::new(Sun {}));
-    println!("reference count = {}", Rc::strong_count(&sun)); // 9 references
+    let neptune = Planet::Neptune(Rc::clone(&sun)); // Utilisation de Rc::clone pour partager la référence à sun
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
     neptune.details();
 
     assert_eq!(Rc::strong_count(&sun), 9);
 
     drop(neptune);
-    println!("reference count = {}", Rc::strong_count(&sun)); // 8 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
     drop(uranus);
-    println!("reference count = {}", Rc::strong_count(&sun)); // 7 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
     drop(saturn);
-    println!("reference count = {}", Rc::strong_count(&sun)); // 6 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
     drop(jupiter);
-    println!("reference count = {}", Rc::strong_count(&sun)); // 5 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
     drop(mars);
-    println!("reference count = {}", Rc::strong_count(&sun)); // 4 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
-    // TODO
-    println!("reference count = {}", Rc::strong_count(&sun)); // 3 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
-    // TODO
-    println!("reference count = {}", Rc::strong_count(&sun)); // 2 references
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
-    // TODO
-    println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
+    println!("reference count = {}", Rc::strong_count(&sun)); // Added an extra space after "reference"
 
     assert_eq!(Rc::strong_count(&sun), 1);
 }

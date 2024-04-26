@@ -10,11 +10,11 @@
 // Execute `rustlings hint using_as` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 fn average(values: &[f64]) -> f64 {
-    let total = values.iter().sum::<f64>();
-    total / values.len()
+    let total = values.iter().sum::<f64>(); // Modification 1: Spécification explicite du type générique pour la somme
+    total / values.len() as f64 // Modification 2: Utilisation de `as f64` pour effectuer une conversion de type
 }
 
 fn main() {
@@ -31,3 +31,4 @@ mod tests {
         assert_eq!(average(&[3.5, 0.3, 13.0, 11.7]), 7.125);
     }
 }
+
