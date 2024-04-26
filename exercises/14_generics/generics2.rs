@@ -6,10 +6,11 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
+/// Cette modification permet au Wrapper d'envelopper n'importe quel type de valeur.
 
 
-struct Wrapper <T> {// Cette modification permet au Wrapper d'envelopper n'importe quel type de valeur.
 
+struct Wrapper <T> {
     value: T,
 }
 

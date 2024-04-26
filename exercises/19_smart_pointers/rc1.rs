@@ -10,8 +10,9 @@
 //
 // Execute `rustlings hint rc1` or use the `hint` watch subcommand for a hint.
 
-
-
+/// Modification: Changed "Hi" to "Salut"
+/// Utilisation de Rc::clone pour partager la référence à sun
+/// Added an extra space after "reference"
 use std::rc::Rc;
 
 #[derive(Debug)]
@@ -31,7 +32,7 @@ enum Planet {
 
 impl Planet {
     fn details(&self) {
-        println!("Salut depuis {:?} !", self); // Modification: Changed "Hi" to "Salut"
+        println!("Salut depuis {:?} !", self); 
     }
 }
 

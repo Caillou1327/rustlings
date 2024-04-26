@@ -7,7 +7,7 @@
 // Execute `rustlings hint traits5` or use the `hint` watch subcommand for a
 // hint.
 
-
+ /// Modifié pour spécifier que le type T doit implémenter à la fois SomeTrait et OtherTrait
 
 pub trait SomeTrait {
     fn some_function(&self) -> bool {
@@ -32,7 +32,7 @@ impl OtherTrait for OtherStruct {}
 // YOU MAY ONLY CHANGE THE NEXT LINE
 fn some_func<T>(item: T) -> bool
 where
-    T: SomeTrait + OtherTrait, // Modifié pour spécifier que le type T doit implémenter à la fois SomeTrait et OtherTrait
+    T: SomeTrait + OtherTrait, 
 {
     item.some_function() && item.other_function()
 }

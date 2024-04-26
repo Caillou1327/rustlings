@@ -3,6 +3,13 @@
 // Execute `rustlings hint threads3` or use the `hint` watch subcommand for a
 // hint.
 
+    /// Création de canaux pour chaque thread
+    /// Premier thread pour envoyer les éléments du premier demi-vecteur
+    /// Deuxième thread pour envoyer les éléments du deuxième demi-vecteur
+    /// Fusionner les canaux pour récupérer les résultats de l'envoi dans un seul itérateur
+    /// Envoyer les éléments au récepteur principal
+    /// Canal non utilisé dans ce test
+    /// Nombre total d'éléments à recevoir
 
 
 use std::sync::mpsc;
@@ -29,11 +36,9 @@ fn send_tx(q: &Queue, tx: mpsc::Sender<u32>) -> () {
     let first_half = q.first_half.clone();
     let second_half = q.second_half.clone();
 
-    // Création de canaux pour chaque thread
     let (tx1, rx1) = mpsc::channel();
     let (tx2, rx2) = mpsc::channel();
 
-    // Premier thread pour envoyer les éléments du premier demi-vecteur
     thread::spawn(move || {
         for val in first_half {
             println!("sending {:?}", val);
@@ -42,7 +47,6 @@ fn send_tx(q: &Queue, tx: mpsc::Sender<u32>) -> () {
         }
     });
 
-    // Deuxième thread pour envoyer les éléments du deuxième demi-vecteur
     thread::spawn(move || {
         for val in second_half {
             println!("sending {:?}", val);
@@ -51,10 +55,8 @@ fn send_tx(q: &Queue, tx: mpsc::Sender<u32>) -> () {
         }
     });
 
-    // Fusionner les canaux pour récupérer les résultats de l'envoi dans un seul itérateur
     let rx = rx1.into_iter().chain(rx2.into_iter());
 
-    // Envoyer les éléments au récepteur principal
     for received in rx {
         println!("Got: {}", received);
     }
@@ -62,14 +64,13 @@ fn send_tx(q: &Queue, tx: mpsc::Sender<u32>) -> () {
 
 #[test]
 fn main() {
-    let (tx, _) = mpsc::channel(); // Canal non utilisé dans ce test
+    let (tx, _) = mpsc::channel(); 
     let queue = Queue::new();
     let queue_length = queue.length;
 
     send_tx(&queue, tx);
 
-    let total_received = queue_length; // Nombre total d'éléments à recevoir
-
+    let total_received = queue_length; 
     println!("total numbers received: {}", total_received);
     assert_eq!(total_received, queue_length)
 }

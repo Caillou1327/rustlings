@@ -5,7 +5,8 @@
 // Execute `rustlings hint tests4` or use the `hint` watch subcommand for a
 // hint.
 
-
+ /// Ce test doit vérifier si le programme panique lorsque nous essayons de créer un rectangle avec une largeur négative
+ /// Nous utilisons la fonction `catch_unwind` pour vérifier si une panique se produit lors de la création d'un rectangle avec une largeur négative
 
 struct Rectangle {
     width: i32,
@@ -36,8 +37,7 @@ mod tests {
 
     #[test]
     fn negative_width() {
-        // Ce test doit vérifier si le programme panique lorsque nous essayons de créer un rectangle avec une largeur négative
-        // Nous utilisons la fonction `catch_unwind` pour vérifier si une panique se produit lors de la création d'un rectangle avec une largeur négative
+       
         assert!(std::panic::catch_unwind(|| {
             let _rect = Rectangle::new(-10, 10);
         }).is_err());
@@ -45,8 +45,7 @@ mod tests {
     
     #[test]
     fn negative_height() {
-        // Ce test doit vérifier si le programme panique lorsque nous essayons de créer un rectangle avec une hauteur négative
-        // Nous utilisons la fonction `catch_unwind` pour vérifier si une panique se produit lors de la création d'un rectangle avec une hauteur négative
+
         assert!(std::panic::catch_unwind(|| {
             let _rect = Rectangle::new(10, -10);
         }).is_err());

@@ -8,11 +8,11 @@
 // Execute `rustlings hint modules3` or use the `hint` watch subcommand for a
 // hint.
 
+///pour utiliser leurs fonctions sans redefinir le chemin a chaque fois.
 
 
 // TODO: Complete this use statement
 use std::time::{SystemTime, UNIX_EPOCH}; // Import de SystemTime and UNIX_EPOCH du module std::time 
-                                         //pour utiliser leurs fonctions sans redefinir le chemin a chaque fois.
 
 fn main() {
     match SystemTime::now().duration_since(UNIX_EPOCH) {

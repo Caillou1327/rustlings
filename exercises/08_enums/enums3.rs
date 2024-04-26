@@ -5,11 +5,12 @@
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a
 // hint.
 
+    /// Definire l'emsemble des messages
 
 
 enum Message {
     // TODO: implement the message variant types based on their usage below
-    Quit, // Definire l'emsemble des messages
+    Quit, 
     Move(Point),
     Echo(String),
     ChangeColor(u8, u8, u8),

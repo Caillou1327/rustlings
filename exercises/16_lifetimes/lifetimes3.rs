@@ -5,9 +5,9 @@
 // Execute `rustlings hint lifetimes3` or use the `hint` watch subcommand for a
 // hint.
 
+/// Faire en sorte qie author et title est une durée de vie égale à la durée de vie des donner aux quelle elle se refèrent
 
-
-struct Book <'a> { // Faire en sorte qie author et title est une durée de vie égale à la durée de vie des donner aux quelle elle se refèrent
+struct Book <'a> { 
     author: &'a str,
     title: &'a str,
 }

@@ -7,6 +7,8 @@
 // Execute `rustlings hint structs3` or use the `hint` watch subcommand for a
 // hint.
 
+        /// Definit is_international pour si le pays et le recepteur sont différents du pays d'origine
+        /// Definit le poid du paquet * le prix en centimes par gramme
 
 
 #[derive(Debug)]
@@ -33,12 +35,12 @@ impl Package {
 
     fn is_international(&self) -> bool {
         // Something goes here...
-        self.sender_country!= self.recipient_country // Definit is_international pour si le pays et le recepteur sont différents du pays d'origine
+        self.sender_country!= self.recipient_country 
     }
 
     fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // Something goes here...
-        self.weight_in_grams * cents_per_gram // Definit le poid du paquet * le prix en centimes par gramme
+        self.weight_in_grams * cents_per_gram 
     }
 }
 

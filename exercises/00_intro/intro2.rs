@@ -5,8 +5,9 @@
 // Execute `rustlings hint intro2` or use the `hint` watch subcommand for a
 // hint.
 
-
+    /// Remplacement de pritnline! par println!
 
 fn main() {
-    println!("Hello there!") // Remplacement de pritnline! par println!
+    println!("Hello there!") 
+
 }

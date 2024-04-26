@@ -7,6 +7,7 @@
 //
 // No hints this time!
 
+    /// Convertir la sous-chaîne &str en String
 
 
 fn string_slice(arg: &str) {
@@ -23,8 +24,8 @@ fn main() {
     string("rust is fun!".to_owned());
     string("nice weather".into());
     string(format!("Interpolation {}", "Station"));
-    string((&String::from("abc")[0..1]).to_string());   // Convertir la sous-chaîne &str en String
-    string("  hello there ".trim().to_string());        // Convertir la sous-chaîne &str en String
+    string((&String::from("abc")[0..1]).to_string());   
+    string("  hello there ".trim().to_string());        
     string("Happy Monday!".to_string().replace("Mon", "Tues"));
     string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }

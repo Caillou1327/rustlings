@@ -3,9 +3,9 @@
 // Execute `rustlings hint macros4` or use the `hint` watch subcommand for a
 // hint.
 
-
-
 // suppresion de #[rustfmt::skip] pour que le code ne soit pas reformater
+
+
 macro_rules! my_macro {
     () => {
         println!("Check out my macro!");

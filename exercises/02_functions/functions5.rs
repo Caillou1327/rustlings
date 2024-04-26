@@ -3,6 +3,7 @@
 // Execute `rustlings hint functions5` or use the `hint` watch subcommand for a
 // hint.
 
+    /// Enlever le ; pour retourner la valeur
 
 
 fn main() {
@@ -11,5 +12,5 @@ fn main() {
 }
 
 fn square(num: i32) -> i32 {
-    num * num // Enlever le ; pour retourner la valeur
+    num * num 
 }

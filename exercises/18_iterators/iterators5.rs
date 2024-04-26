@@ -11,7 +11,11 @@
 // Execute `rustlings hint iterators5` or use the `hint` watch subcommand for a
 // hint.
 
-
+/// Utilisation de la méthode filter pour filtrer les valeurs égales à la valeur donnée,
+/// puis count pour compter le nombre d'éléments dans l'itérateur résultant.
+/// Utilisation de la méthode iter pour obtenir un itérateur sur la collection de cartes,
+/// puis map pour transformer chaque carte en nombre de progrès donné à l'aide de count_iterator,
+/// et enfin sum pour obtenir la somme de ces nombres.
 
 use std::collections::HashMap;
 
@@ -33,8 +37,7 @@ fn count_for(map: &HashMap<String, Progress>, value: Progress) -> usize {
 }
 
 fn count_iterator(map: &HashMap<String, Progress>, value: Progress) -> usize {
-    // Utilisation de la méthode filter pour filtrer les valeurs égales à la valeur donnée,
-    // puis count pour compter le nombre d'éléments dans l'itérateur résultant.
+    
     map.values().filter(|&val| *val == value).count()
 }
 
@@ -47,9 +50,7 @@ fn count_collection_for(collection: &[HashMap<String, Progress>], value: Progres
 }
 
 fn count_collection_iterator(collection: &[HashMap<String, Progress>], value: Progress) -> usize {
-    // Utilisation de la méthode iter pour obtenir un itérateur sur la collection de cartes,
-    // puis map pour transformer chaque carte en nombre de progrès donné à l'aide de count_iterator,
-    // et enfin sum pour obtenir la somme de ces nombres.
+   
     collection.iter().map(|map| count_iterator(map, value)).sum()
 }
 

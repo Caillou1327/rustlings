@@ -9,6 +9,8 @@
 // Execute `rustlings hint errors6` or use the `hint` watch subcommand for a
 // hint.
 
+    /// cette focntion permet de convertir une error en non zero erreur
+    /// convertir une erreur de parsing (ParseIntError) en une erreur de ParsePosNonzeroError en enveloppant l'erreur de parsing dans l'énumération ParsePosNonzeroError avec le variant ParseInt
 
 
 use std::num::ParseIntError;
@@ -27,10 +29,8 @@ impl ParsePosNonzeroError {
     // TODO: add another error conversion function here.
     // fn from_parseint...
 
-    // cette focntion permet de convertir une error en non zero erreur
     fn from_parseint(err: ParseIntError) -> ParsePosNonzeroError {
         ParsePosNonzeroError::ParseInt(err)
-    //convertir une erreur de parsing (ParseIntError) en une erreur de ParsePosNonzeroError en enveloppant l'erreur de parsing dans l'énumération ParsePosNonzeroError avec le variant ParseInt
     }
 }
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
